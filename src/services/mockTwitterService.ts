@@ -122,7 +122,32 @@ export class MockTwitterService {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     
-    return mockUsers.find(user => user.username.toLowerCase() === username.toLowerCase()) || null
+    const normalizedUsername = username.toLowerCase()
+    
+    // Check if user already exists in mock data
+    const existingUser = mockUsers.find(user => user.username.toLowerCase() === normalizedUsername)
+    if (existingUser) {
+      return existingUser
+    }
+    
+    // Create a new mock user for any username
+    const newUser: TwitterUser = {
+      id: `mock_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      username: normalizedUsername,
+      name: username.charAt(0).toUpperCase() + username.slice(1), // Capitalize first letter
+      profile_image_url: `https://via.placeholder.com/40x40/1da1f2/ffffff?text=${username.charAt(0).toUpperCase()}`,
+      verified: Math.random() > 0.7, // 30% chance of being verified
+      public_metrics: {
+        followers_count: Math.floor(Math.random() * 100000) + 1000, // 1K-100K followers
+        following_count: Math.floor(Math.random() * 2000) + 100,
+        tweet_count: Math.floor(Math.random() * 10000) + 500
+      }
+    }
+    
+    // Add to mock users for future reference
+    mockUsers.push(newUser)
+    
+    return newUser
   }
   
   async getTweetsByUsername(
@@ -138,6 +163,12 @@ export class MockTwitterService {
     }
     
     let tweets = this.mockData.get(username) || []
+    
+    // If no tweets exist for this user, generate some
+    if (tweets.length === 0) {
+      tweets = generateMockTweets(user, 10)
+      this.mockData.set(username, tweets)
+    }
     
     // Filter by since_id if provided
     if (options.since_id) {
