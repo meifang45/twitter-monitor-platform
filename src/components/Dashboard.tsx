@@ -181,43 +181,6 @@ const TweetCard = memo(function TweetCard({ tweet }: { tweet: TweetWithUser }) {
   )
 })
 
-// Loading skeleton component
-const TweetSkeleton = memo(function TweetSkeleton() {
-  return (
-    <div className="p-4 bg-muted/50 rounded-lg border border-border/50 animate-fade-in">
-      <div className="flex items-start space-x-3">
-        <div className="w-10 h-10 bg-muted-foreground/20 rounded-full animate-pulse"></div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center space-x-2">
-            <div className="h-4 bg-muted-foreground/30 rounded w-24 animate-pulse"></div>
-            <div className="h-4 bg-muted-foreground/20 rounded w-20 animate-pulse"></div>
-            <div className="h-4 bg-muted-foreground/20 rounded w-8 animate-pulse"></div>
-          </div>
-          <div className="mt-3 space-y-2">
-            <div className="h-4 bg-muted-foreground/40 rounded w-full animate-pulse"></div>
-            <div className="h-4 bg-muted-foreground/40 rounded w-4/5 animate-pulse"></div>
-            <div className="h-4 bg-muted-foreground/40 rounded w-3/5 animate-pulse"></div>
-          </div>
-          <div className="mt-4 flex items-center space-x-6">
-            <div className="flex items-center space-x-1">
-              <div className="h-8 w-8 bg-muted-foreground/20 rounded-full animate-pulse"></div>
-              <div className="h-3 bg-muted-foreground/20 rounded w-6 animate-pulse"></div>
-            </div>
-            <div className="flex items-center space-x-1">
-              <div className="h-8 w-8 bg-muted-foreground/20 rounded-full animate-pulse"></div>
-              <div className="h-3 bg-muted-foreground/20 rounded w-6 animate-pulse"></div>
-            </div>
-            <div className="flex items-center space-x-1">
-              <div className="h-8 w-8 bg-muted-foreground/20 rounded-full animate-pulse"></div>
-              <div className="h-3 bg-muted-foreground/20 rounded w-6 animate-pulse"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-})
-
 // Add Account Modal Component
 function AddAccountModal({ isOpen, onClose, onAdd }: { 
   isOpen: boolean; 

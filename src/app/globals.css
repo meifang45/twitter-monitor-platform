@@ -2,57 +2,57 @@
 @import "./animations.css";
 
 :root {
-  /* Light theme colors */
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #18181b;
-  --primary-foreground: #fafafa;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #18181b;
+  /* Warm white theme colors */
+  --background: #fefdfb;
+  --foreground: #2d2016;
+  --card: #fffef9;
+  --card-foreground: #2d2016;
+  --popover: #fffef9;
+  --popover-foreground: #2d2016;
+  --primary: #8b4513;
+  --primary-foreground: #fefdfb;
+  --secondary: #f8f5f0;
+  --secondary-foreground: #2d2016;
+  --muted: #f5f2ed;
+  --muted-foreground: #8b7355;
+  --accent: #f8f5f0;
+  --accent-foreground: #2d2016;
+  --destructive: #d2691e;
+  --destructive-foreground: #fefdfb;
+  --border: #e8e0d4;
+  --input: #e8e0d4;
+  --ring: #8b4513;
   --radius: 0.5rem;
 }
 
-/* Dark theme as default preference */
+/* Warm white theme as default preference */
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
-  --color-card: #18181b;
-  --color-card-foreground: #fafafa;
-  --color-popover: #18181b;
-  --color-popover-foreground: #fafafa;
-  --color-primary: #fafafa;
-  --color-primary-foreground: #18181b;
-  --color-secondary: #27272a;
-  --color-secondary-foreground: #fafafa;
-  --color-muted: #27272a;
-  --color-muted-foreground: #a1a1aa;
-  --color-accent: #27272a;
-  --color-accent-foreground: #fafafa;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-border: #27272a;
-  --color-input: #27272a;
-  --color-ring: #d4d4d8;
+  --color-background: #fefdfb;
+  --color-foreground: #2d2016;
+  --color-card: #fffef9;
+  --color-card-foreground: #2d2016;
+  --color-popover: #fffef9;
+  --color-popover-foreground: #2d2016;
+  --color-primary: #8b4513;
+  --color-primary-foreground: #fefdfb;
+  --color-secondary: #f8f5f0;
+  --color-secondary-foreground: #2d2016;
+  --color-muted: #f5f2ed;
+  --color-muted-foreground: #8b7355;
+  --color-accent: #f8f5f0;
+  --color-accent-foreground: #2d2016;
+  --color-destructive: #d2691e;
+  --color-destructive-foreground: #fefdfb;
+  --color-border: #e8e0d4;
+  --color-input: #e8e0d4;
+  --color-ring: #8b4513;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Dark theme override for prefers-color-scheme */
+/* Optional dark theme override (disabled by default) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  .dark-theme-enabled:root {
     --background: #0a0a0a;
     --foreground: #fafafa;
     --card: #18181b;
@@ -75,9 +75,9 @@
   }
 }
 
-/* Force dark theme by default */
+/* Force warm white theme by default */
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
