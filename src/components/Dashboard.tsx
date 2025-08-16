@@ -472,10 +472,6 @@ export default function Dashboard() {
                             type={error.includes('network') || error.includes('fetch') ? 'network' : 'api'}
                             showRetry={true}
                           />
-                        ) : (tweetsLoading || autoRefresh.isRefreshing) ? (
-                          Array.from({ length: 3 }).map((_, index) => (
-                            <TweetSkeleton key={index} />
-                          ))
                         ) : tweets.length > 0 ? (
                           tweets.map((tweet) => (
                             <TweetCard key={tweet.id} tweet={tweet} />
@@ -541,10 +537,6 @@ export default function Dashboard() {
                             type={error.includes('network') || error.includes('fetch') ? 'network' : 'api'}
                             showRetry={true}
                           />
-                        ) : (tweetsLoading || autoRefresh.isRefreshing) ? (
-                          Array.from({ length: 5 }).map((_, index) => (
-                            <TweetSkeleton key={index} />
-                          ))
                         ) : tweets.length > 0 ? (
                           tweets.map((tweet) => (
                             <TweetCard key={tweet.id} tweet={tweet} />
