@@ -9,6 +9,12 @@ const users = [
     email: "user@example.com",
     password: "password", // Plain text for demo - use bcrypt in real apps
     name: "Demo User"
+  },
+  {
+    id: "2",
+    email: "admin@twittermonitor.com",
+    password: "admin123", // Plain text for demo - use bcrypt in real apps
+    name: "Admin User"
   }
 ]
 
